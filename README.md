@@ -29,8 +29,7 @@ Witness our race car in action: executing precise maneuvers with path planning o
 
 This RVIZ visualization showcases how my path-planning algorithm performs. It was recorded during real-world driving.
 
-https://github.com/mabdn/score-function-dfs/assets/93079021/54c0ab32-bf42-401e-b637-bb3fde20ae58
-
+<https://github.com/mabdn/score-function-dfs/assets/93079021/54c0ab32-bf42-401e-b637-bb3fde20ae58>
 
 ## Description
 
@@ -68,8 +67,8 @@ KA-RaceIng is one of the world's best formula student teams in autonomous racing
 My algorithm finds the middle line through the race track in a given map. The map is given as a list of cone positions. This list is triangulated with a Delaunay Triangulation. Then, my custom depth-first search algorithm explores many possible paths through the map. While backtracking the depth-first search graph, score functions are used to decide which path is the best.
 
 <p align="center">
-  <a href="assets/middleline_pkg-all_current.png" target="_blank">
-    <img src="assets/middleline_pkg-all_current.png" width="1000px">
+  <a href="assets/middleline_pkg-all.png" target="_blank">
+    <img src="assets/middleline_pkg-all.png" width="1000px">
   </a>
 </p>
 
