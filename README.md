@@ -4,7 +4,7 @@
 
 Here, I present a path planning algorithm I developed at KA-RaceIng for its autonomous electric race car, the KIT24.
 Given a map of cones marking the track, the algorithm finds the path through the race track.
-It superseded KA-RaceIngs previous approach to path planning because it can tolerate mistakes in the map (e.g. false positive or false negative cone detection).
+It superseded KA-RaceIng's previous approach to path planning because it can tolerate mistakes in the map (e.g. false positive or false negative cone detection).
 
 <p align="center" float="left">
   <a href="https://www.ka-raceing.de/"><img src="assets/ka-raceing_logo.png" height="166px"></a>
@@ -39,7 +39,7 @@ This repository presents one part of my contribution to KA-RaceIng's autonomous 
 
 - **Increased path planning safety** to **50% fewer runs with planning mistakes** by designing the depth-frist search path planning algorithm presented in this repository
 - **Reduced the autonomous lap time by 4%** in the cornering simulation using **C++** and **ROS** by developing a velocity planning algorithm that **estimates the cornering stability** of the car and accelerates the car to drive at its **stability limit**
-- **Led a team of physicists, mechatronics engineers, and computer scientists** decreasing the **scrum sprint time from 4 weeks to 2 weeks** by improving communication of hardware and software teams with a systematic feedback cycle
+- **Led an interdisciplinary team of physicists, mechatronics engineers, and computer scientists** decreasing the **scrum sprint time from 4 weeks to 2 weeks**
 - **Automated the project’s GitLab CI pipeline** to check code style and formatting rules automatically by creating a **custom Docker Linux image**
 
 ### What is KA-RaceIng and Formula Student?
@@ -57,7 +57,7 @@ KA-RaceIng is one of the world's best formula student teams in autonomous racing
 
 - **C++17** Programming Language
 - **ROS** Robotics Software Framework
-- **Docker Containers** for Continous Integration
+- **Docker Containers** for Continuous Integration
 - **GoogleTest** Unit Test Framework
 
 ## Software Design
@@ -72,7 +72,7 @@ My algorithm finds the middle line through the race track in a given map. The ma
   </a>
 </p>
 
-The `middleline_pkg` is the package I implemented to realize my algorithm. It is responsible for the calculation and planning of the middleline trajectory for the autonomous vehicle. The package is built around several key concepts and files, which are explained below.
+The `middleline_pkg` is the package I implemented to realize my algorithm. It is responsible for the calculation and planning of the middle line trajectory for the autonomous vehicle. The package is built around several key concepts and files, which are explained below.
 
 ### `DepthFirstSearchTemplate`
 
@@ -84,7 +84,7 @@ These files implement a specific DFS strategy that uses a scoring function to ev
 
 ### `ScoreCalculation`
 
-This implements a strategy design pattern (`HSLScoreCalculation`, `CHSLScoreCalculation`, `WCHSLScoreCalculation`) allowing developers to choose from different scoring strategies. The scoring strategies evaluate the quality of a path section based on various properties of the path.
+This implements a strategy design pattern (`ILScoreCalculation`, `BILScoreCalculation`, `OBILScoreCalculation`) allowing developers to choose from different scoring strategies. The scoring strategies evaluate the quality of a path section based on various properties of the path.
 
 ### `TriangulationFiltering`
 
@@ -96,4 +96,4 @@ The `ForwardCheckingService` class checks if a forward step in the DFS is allowe
 
 ## License
 
-The code I wrote in this project is private. It is actively used by the KA-RaceIng team. It is the core of path planning at KA-RaceIng and is essential for the team's success in autonomous racing. Hence, I cannot publish any of this code here. I can give you more insights and show you code in a personal discussion, though.
+The code I wrote in this project is private. It is actively used by the KA-RaceIng team. It is the core of path planning at KA-RaceIng and is essential for the team's success in autonomous racing. Hence, I cannot publish any of this code here. I can give you more insights in a personal discussion, though.
