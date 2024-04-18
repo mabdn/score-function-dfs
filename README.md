@@ -6,21 +6,42 @@ Here, I present a path planning algorithm I developed at KA-RaceIng for its auto
 Given a map of cones marking the track, the algorithm finds the path through the race track.
 It superseded KA-RaceIngs previous approach to path planning because it can tolerate mistakes in the map (e.g. false positive or false negative cone detection).
 
+<p align="center" float="left">
+  <a href="https://www.ka-raceing.de/"><img src="assets/ka-raceing_logo.png" height="166px"></a>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  <a href="assets/ka-raceing_kit23.jpg" target="_blank">
+  <img src="assets/ka-raceing_kit23.jpg" height="166px">
+  </a>
+</p>
+
 ## Demo
 
-Witness our race car in action: executing precise maneuvers with path planning on the race track (left) and employing cornering velocity planning, another technique I personally realized (right).
+Witness our race car in action: executing precise maneuvers with path planning on the race track (first) and employing cornering velocity planning, another technique I personally realized (second).
 
-VIdeo a, Video b
+<https://github.com/mabdn/score-function-dfs/assets/93079021/66038b40-8097-43d2-b00d-ff6f92832168>
+
+<https://github.com/mabdn/score-function-dfs/assets/93079021/85f6e870-fdb0-4f2b-966b-64d09f0ee609>
 
 This RVIZ visualization showcases how my path-planning algorithm performs. It was recorded during real-world driving.
 
-Video c
+https://github.com/mabdn/score-function-dfs/assets/93079021/54c0ab32-bf42-401e-b637-bb3fde20ae58
+
 
 ## Description
 
 This repository presents one part of my contribution to KA-RaceIng's autonomous racing software during a 7-month part-time (15h/week) position as **Autonomous Driving Software Engineer** at Karlsruhe Institute of Technology's Formula Student team KA-RaceIng.
 
 ### Results and Experience Gained
+
+- **Increased path planning safety** to **50% fewer runs with planning mistakes** by designing the depth-frist search path planning algorithm presented in this repository
+- **Reduced the autonomous lap time by 4%** in the cornering simulation using **C++** and **ROS** by developing a velocity planning algorithm that **estimates the cornering stability** of the car and accelerates the car to drive at its **stability limit**
+- **Led a team of physicists, mechatronics engineers, and computer scientists** decreasing the **scrum sprint time from 4 weeks to 2 weeks** by improving communication of hardware and software teams with a systematic feedback cycle
+- **Automated the project’s GitLab CI pipeline** to check code style and formatting rules automatically by creating a **custom Docker Linux image**
 
 ### What is KA-RaceIng and Formula Student?
 
