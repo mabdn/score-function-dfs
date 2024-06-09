@@ -37,10 +37,9 @@ This repository presents one part of my contribution to KA-RaceIng's autonomous 
 
 ### Results and Experience Gained
 
-- **Increased path planning safety** to **50% fewer runs with planning mistakes** by designing the depth-frist search path planning algorithm presented in this repository
-- **Reduced the autonomous lap time by 4%** in the cornering simulation using **C++** and **ROS** by developing a velocity planning algorithm that **estimates the cornering stability** of the car and accelerates the car to drive at its **stability limit**
-- **Led an interdisciplinary team of physicists, mechatronics engineers, and computer scientists** decreasing the **scrum sprint time from 4 weeks to 2 weeks**
-- **Automated the project’s GitLab CI pipeline** to check code style and formatting rules automatically by creating a **custom Docker Linux image**
+- Re-designed the path planning algorithm to improve **path planning safety** to have fewer laps with planning mistakes
+- Finished code others started for **reducing the autonomous lap time** by estimating the cornering stability of the car and accelerating to drive at its stability limit
+- Automated the project’s GitLab CI pipeline to check **code style and formatting rules automatically** with a custom Docker Linux image
 
 ### What is KA-RaceIng and Formula Student?
 
