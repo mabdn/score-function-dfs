@@ -21,7 +21,7 @@ It superseded KA-RaceIng's previous approach to path planning because it can tol
 
 ## Demo
 
-Witness our race car in action: executing precise maneuvers with path planning on the race track (first) and employing cornering velocity planning, another technique I personally realized (second).
+Witness our race car in action: executing precise maneuvers with path planning on the race track (first) and employing cornering velocity planning, another technique I contributed to (second).
 
 <https://github.com/mabdn/score-function-dfs/assets/93079021/66038b40-8097-43d2-b00d-ff6f92832168>
 
@@ -71,15 +71,15 @@ My algorithm finds the middle line through the race track in a given map. The ma
   </a>
 </p>
 
-The `middleline_pkg` is the package I implemented to realize my algorithm. It is responsible for the calculation and planning of the middle line trajectory for the autonomous vehicle. The package is built around several key concepts and files, which are explained below.
+The `middleline_pkg` is the package I implemented to realize my algorithm. It is responsible for the calculation and planning of the middle line trajectory for the autonomous vehicle. The package is built around several key concepts, which are explained below.
 
 ### `DepthFirstSearchTemplate`
 
-This file implements a generic depth-first search (DFS) algorithm. The DFS is used to traverse the triangulation graph and find the optimal path. The DFS algorithm is templated, allowing for different scoring and forward-checking strategies to be used.
+This class implements a generic depth-first search (DFS) algorithm. The DFS is used to traverse the triangulation graph and find the optimal path. The DFS algorithm is templated, allowing for different scoring and forward-checking strategies to be used.
 
 ### `ScoreFunctionDepthFirstSearch`
 
-These files implement a specific DFS strategy that uses a scoring function to evaluate the quality of the paths. The scoring function is used to guide the DFS towards the most promising paths.
+This class implements a specific DFS strategy that uses a scoring function to evaluate the quality of the paths. The scoring function is used to guide the DFS towards the most promising paths.
 
 ### `ScoreCalculation`
 
@@ -87,12 +87,12 @@ This implements a strategy design pattern (`ILScoreCalculation`, `BILScoreCalcul
 
 ### `TriangulationFiltering`
 
-The `TriangulationFiltering` class is responsible for preprocessing the triangulation graph before the path planning starts. It removes triangles that are not plausible.
+This class preprocesses the triangulation graph before the path planning starts. It removes triangles that are not plausible.
 
 ### `ForwardCheckingService`
 
-The `ForwardCheckingService` class checks if a forward step in the DFS is allowed. For example, it prevents turns that would be too sharp to drive.
+This class checks if a forward step in the DFS is allowed. For example, it prevents turns that would be too sharp to drive.
 
 ## License
 
-The code I wrote in this project is private. It is actively used by the KA-RaceIng team. It is the core of path planning at KA-RaceIng and is essential for the team's success in autonomous racing. Hence, I cannot publish any of this code here. I can give you more insights in a personal discussion, though.
+The code I wrote in this project is private. The KA-RaceIng team actively uses it. It is the core of path planning at KA-RaceIng and contributes its part to our success in autonomous racing. Hence, I cannot publish any of this code here. I can give you more insights in a personal discussion, though.
