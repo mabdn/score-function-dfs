@@ -44,7 +44,7 @@ This repository presents one part of my contribution to KA-RaceIng's autonomous 
 ### What is KA-RaceIng and Formula Student?
 
 KA-RaceIng is a racing team of students from *Karlsruhe Institute of Technology* competing in *Formula Student*.
-*Formula Student* is an international engineering competition. 50-member teams from the world's best universities design, build, and code autonomous electric full-sized race cars.
+*Formula Student* is an international engineering competition. 50-member teams from universities around the world design, build, and code autonomous electric full-sized race cars.
 
 KA-RaceIng is one of the world's best formula student teams in autonomous racing. E.g.,
 
@@ -63,7 +63,7 @@ KA-RaceIng is one of the world's best formula student teams in autonomous racing
 
 ### Overall Structure
 
-My algorithm finds the middle line through the race track in a given map. The map is given as a list of cone positions. This list is triangulated with a Delaunay Triangulation. Then, my custom depth-first search algorithm explores many possible paths through the map. While backtracking the depth-first search graph, score functions are used to decide which path is the best.
+My algorithm finds the middle line through the race track in a given map. The map is given as a list of cone positions. This list is triangulated with a Delaunay Triangulation. Then, my custom depth-first search algorithm explores many possible paths through the map. While backtracking the depth-first search graph, score functions decide which path is the best.
 
 <p align="center">
   <a href="assets/middleline_pkg-all.png" target="_blank">
@@ -83,15 +83,11 @@ This class implements a specific DFS strategy that uses a scoring function to ev
 
 ### `ScoreCalculation`
 
-This implements a strategy design pattern (`ILScoreCalculation`, `BILScoreCalculation`, `OBILScoreCalculation`) allowing developers to choose from different scoring strategies. The scoring strategies evaluate the quality of a path section based on various properties of the path.
-
-### `TriangulationFiltering`
-
-This class preprocesses the triangulation graph before the path planning starts. It removes triangles that are not plausible.
+This interface implements a strategy design pattern (`ILScoreCalculation`, `BILScoreCalculation`, `OBILScoreCalculation`) allowing developers to choose from different scoring strategies. The scoring strategies evaluate the quality of a path section based on various properties of the path.
 
 ### `ForwardCheckingService`
 
-This class checks if a forward step in the DFS is allowed. For example, it prevents turns that would be too sharp to drive.
+This class ensures that the chosen paths are physically drivable. For example, it prevents turns that would be too sharp to drive.
 
 ## License
 
