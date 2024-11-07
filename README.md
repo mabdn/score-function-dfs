@@ -59,36 +59,6 @@ KA-RaceIng is one of the world's best formula student teams in autonomous racing
 - **Docker Containers** for Continuous Integration
 - **GoogleTest** Unit Test Framework
 
-## Software Design
-
-### Overall Structure
-
-My algorithm finds the middle line through the race track in a given map. The map is given as a list of cone positions. This list is triangulated with a Delaunay Triangulation. Then, my custom depth-first search algorithm explores many possible paths through the map. While backtracking the depth-first search graph, score functions decide which path is the best.
-
-<p align="center">
-  <a href="assets/middleline_pkg-all.png" target="_blank">
-    <img src="assets/middleline_pkg-all.png" width="1000px">
-  </a>
-</p>
-
-The `middleline_pkg` is the package I implemented to realize my algorithm. It is responsible for the calculation and planning of the middle line trajectory for the autonomous vehicle. The package is built around several key concepts, which are explained below.
-
-### `DepthFirstSearchTemplate`
-
-This class implements a generic depth-first search (DFS) algorithm. The DFS is used to traverse the triangulation graph and find the optimal path. The DFS algorithm is templated, allowing for different scoring and forward-checking strategies to be used.
-
-### `ScoreFunctionDepthFirstSearch`
-
-This class implements a specific DFS strategy that uses a scoring function to evaluate the quality of the paths. The scoring function is used to guide the DFS towards the most promising paths.
-
-### `ScoreCalculation`
-
-This interface implements a strategy design pattern (`ILScoreCalculation`, `BILScoreCalculation`, `OBILScoreCalculation`) allowing developers to choose from different scoring strategies. The scoring strategies evaluate the quality of a path section based on various properties of the path.
-
-### `ForwardCheckingService`
-
-This class ensures that the chosen paths are physically drivable. For example, it prevents turns that would be too sharp to drive.
-
 ## License
 
 The code I wrote in this project is private. The KA-RaceIng team actively uses it. It is the core of path planning at KA-RaceIng and contributes its part to our success in autonomous racing. Hence, I cannot publish any of this code here. I can give you more insights in a personal discussion, though.
