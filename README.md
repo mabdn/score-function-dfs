@@ -59,6 +59,7 @@ KA-RaceIng is one of the world's best formula student teams in autonomous racing
 - **Docker Containers** for Continuous Integration
 - **GoogleTest** Unit Test Framework
 
+
 ## License
 
 The code I wrote in this project is private. The KA-RaceIng team actively uses it. It is the core of path planning at KA-RaceIng and contributes its part to our success in autonomous racing. Hence, I cannot publish any of this code here. I can give you more insights in a personal discussion, though.
